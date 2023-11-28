@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="love.css">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div class="wrapper">
         <!-- <img src="../thư love.png" alt=""> -->
         <div class="formInput">
-            
+
             <div class="boxHands">
                 <div class="handsCat">
                     <img src="../image/handsCat.png" alt="">
@@ -19,14 +23,14 @@
                 <h1>Happy Birthday</h1>
             </div>
             <div class="boxSlider">
-                    <div class="listSlider">
-                        <div class="slider">
-                            <img src="../image/love1.jfif" alt="">
-                        </div>
-                        <div class="slider">
-                            <img src="../image/love2.png" alt="">
-                        </div>
+                <div class="listSlider">
+                    <div class="slider">
+                        <img src="https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/404286830_6786239308098672_3186534626941325705_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=QjX800VVdv8AX8zPJzn&_nc_ht=scontent.fhan5-2.fna&oh=03_AdRj6CMtCQki5TiV29AsLfvxR-v7nwPXo6VQOt-LhaZgDQ&oe=658D48A1" alt="">
                     </div>
+                    <div class="slider">
+                        <img src="https://scontent.fhan5-6.fna.fbcdn.net/v/t1.15752-9/405325669_1741122999647684_9147062744397041290_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=3vM8a9cgNMEAX-eWcW2&_nc_ht=scontent.fhan5-6.fna&oh=03_AdRk2AcOzS36E1MbZAbIzTeX5mGSeQzmQIMjixvMsT3KvQ&oe=658D6F37" alt="">
+                    </div>
+                </div>
                 <div class="left">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>
@@ -70,7 +74,7 @@
                     <span class="line4"></span>
                     <span class="line5"></span>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
     <div class="loadingLove">
@@ -90,7 +94,7 @@
                 <div class="heartLetter">
                     <div class="heartLetterItem"></div>
                 </div>
-                
+
                 <div class="wrapperLetter">
                     <div class="giftbox">
                         <div class="img">
@@ -118,98 +122,98 @@
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script>
-    $(window).on('load', function(event){
-    $('body').removeClass('preloading');
-    $('.loadingLove').delay(1000).fadeOut('fast');
+    $(window).on('load', function (event) {
+        $('body').removeClass('preloading');
+        $('.loadingLove').delay(1000).fadeOut('fast');
 
-        
-    function getHeart(e){
-        let ele = document.createElement("div");
-        ele.className = "element"
-        document.querySelector("body").prepend(ele)
-        ele.style.left = e.clientX + 'px';
-        ele.style.top = e.clientY -10 +'px';
-        setTimeout(()=>{
-            let text = document.querySelectorAll(".element")[0],
-            directionX = Math.random() < .5 ? -1 : 1,
-            directionY = Math.random() < .5 ? -1 : 1
 
-            text.style.left = parseInt(text.style.left) - (directionX * (Math.random() * 100)) + 'px';
-            text.style.top = parseInt(text.style.top) - (directionY * (Math.random() * 100)) + 'px';
-            text.style.opacity = 0;
-            text.style.transform = 'scale(0.4)'
-            text.innerHTML = "💗"
-            text.style.zIndex = "100"
+        function getHeart(e) {
+            let ele = document.createElement("div");
+            ele.className = "element"
+            document.querySelector("body").prepend(ele)
+            ele.style.left = e.clientX + 'px';
+            ele.style.top = e.clientY - 10 + 'px';
+            setTimeout(() => {
+                let text = document.querySelectorAll(".element")[0],
+                    directionX = Math.random() < .5 ? -1 : 1,
+                    directionY = Math.random() < .5 ? -1 : 1
 
-            setTimeout(()=>{
+                text.style.left = parseInt(text.style.left) - (directionX * (Math.random() * 100)) + 'px';
+                text.style.top = parseInt(text.style.top) - (directionY * (Math.random() * 100)) + 'px';
+                text.style.opacity = 0;
+                text.style.transform = 'scale(0.4)'
+                text.innerHTML = "💗"
+                text.style.zIndex = "100"
+
+                setTimeout(() => {
+                    ele.remove()
+                }, 1000)
+            }, 10)
+        }
+        document.onmousemove = function (e) {
+            getHeart(e)
+        }
+        document.onclick = function (e) {
+            let ele = document.createElement("div");
+            ele.className = "heartRain"
+            document.querySelector("body").prepend(ele);
+            ele.style.left = e.clientX - 10 + 'px';
+            ele.style.top = e.clientY - 10 + 'px';
+            ele.innerHTML = "💗"
+            setTimeout(() => {
+                ele.style.top = "calc(85% - 25px)"
+            }, 100)
+            setTimeout(() => {
+                ele.style.opacity = 0
+            }, 3000)
+            setTimeout(() => {
                 ele.remove()
-            },1000)
-        },10)
-    }
-    document.onmousemove = function(e){
-        getHeart(e)
-    }
-    document.onclick = function(e){
-        let ele = document.createElement("div");
-        ele.className = "heartRain"
-        document.querySelector("body").prepend(ele);
-        ele.style.left = e.clientX -10 + 'px';
-        ele.style.top = e.clientY -10 +'px';
-        ele.innerHTML = "💗"
-        setTimeout(()=>{
-            ele.style.top = "calc(85% - 25px)"
-        },100)
-        setTimeout(()=>{
-            ele.style.opacity = 0
-        },3000)
-        setTimeout(()=>{
-            ele.remove()
-        },4000)
-    }
-    document.onmousedown = (e)=>{
-        getHeart(e)
-    }
-
-    const inputField = document.getElementById('inputField');
-    const textToType = "Nguyễn Hạnh Quyên";
-    const typingSpeed = 100; // milliseconds per character
-
-    let charIndex = 0;
-    function typeText() {
-        if (charIndex < textToType.length) {
-            inputField.value += textToType.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeText, typingSpeed);
+            }, 4000)
         }
-        if(inputField.value.length == textToType.length){
-            setTimeout(()=>{
-                document.querySelector(".buttonLove").style.transform = "translateY(0%)";
-                document.querySelector(".cricleBtn").style.transform = "scale(0.1)"
-            },1000)
-            setTimeout(()=>{
-                document.querySelector(".cricleBtn").style.transform = "scale(1)"
-                document.querySelector(".cricleBtn").innerHTML = "💗"
-            },2000)
-            setTimeout(()=>{
-                document.querySelector(".buttonLove").style.width = "120px"
-                document.querySelector(".button").style.transform = "translateX(25px)"
-            },2500)
-            setTimeout(()=>{
-                document.querySelector(".button").style.width = "calc(100% - 25px)"
-                document.querySelector(".button").style.height = "10px"
-            },3000)
-            setTimeout(()=>{
-                document.querySelector(".button").style.height = "30px"
-            },3500)
-            setTimeout(()=>{
-                document.querySelector(".button").innerHTML = "Nhận thư"
-            },4000)
+        document.onmousedown = (e) => {
+            getHeart(e)
         }
-    }
 
-    setTimeout(()=>{
-        typeText();
-    }, 11500)
+        const inputField = document.getElementById('inputField');
+        const textToType = "Nguyễn Hạnh Quyên";
+        const typingSpeed = 100; // milliseconds per character
+
+        let charIndex = 0;
+        function typeText() {
+            if (charIndex < textToType.length) {
+                inputField.value += textToType.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, typingSpeed);
+            }
+            if (inputField.value.length == textToType.length) {
+                setTimeout(() => {
+                    document.querySelector(".buttonLove").style.transform = "translateY(0%)";
+                    document.querySelector(".cricleBtn").style.transform = "scale(0.1)"
+                }, 1000)
+                setTimeout(() => {
+                    document.querySelector(".cricleBtn").style.transform = "scale(1)"
+                    document.querySelector(".cricleBtn").innerHTML = "💗"
+                }, 2000)
+                setTimeout(() => {
+                    document.querySelector(".buttonLove").style.width = "120px"
+                    document.querySelector(".button").style.transform = "translateX(25px)"
+                }, 2500)
+                setTimeout(() => {
+                    document.querySelector(".button").style.width = "calc(100% - 25px)"
+                    document.querySelector(".button").style.height = "10px"
+                }, 3000)
+                setTimeout(() => {
+                    document.querySelector(".button").style.height = "30px"
+                }, 3500)
+                setTimeout(() => {
+                    document.querySelector(".button").innerHTML = "Nhận thư"
+                }, 4000)
+            }
+        }
+
+        setTimeout(() => {
+            typeText();
+        }, 11500)
     });
 
     // .textLetter text h2
@@ -218,64 +222,64 @@
     const textLetterH2 = "Dear My Lover!";
     let timoutTextLetter;
 
-    function textCharLetter(){
+    function textCharLetter() {
         if (indexText < textLetterH2.length) {
             textLetter.textContent += textLetterH2[indexText];
             indexText++;
             setTimeout(indexText, 100);
         }
-        else{
+        else {
             clearInterval(timoutTextLetter);
-            setTimeout(()=>{
+            setTimeout(() => {
                 funcTimeoutLetterContent()
-            },500)
+            }, 500)
         }
     }
-    function funcTimeoutLetter(){
+    function funcTimeoutLetter() {
         indexText = 0; // Reset indexText
         textLetter.textContent = ''; // Xóa nội dung hiện tại của textLetter
         clearInterval(timoutTextLetter);
-        timoutTextLetter =  setInterval(()=>{
-                textCharLetter();
-            }, 200)
+        timoutTextLetter = setInterval(() => {
+            textCharLetter();
+        }, 200)
     }
 
     // chữ của thư bạn muốn gửi
     let indexTextContent = 0;
     let textLetterContent = document.querySelector('.contentLetter');
-    const textLetterP = "1 tuần có 7 ngày. 1 ngày có 24 giờ. 1 giờ có 60 phút. 1 phút có 60 giây. Không có một ngày hoặc giờ mà tôi không nhớ bạn. Không có giây phút nào mà anh không nghĩ đến cậu. Tâm hồn và trái tim tôi tràn ngập bạn. Nhớ và yêu em nhiều lắm.";
+    const textLetterP = "Happy birthday🎂.Anh chúc em thêm một tuổi mới tràn ngập niềm vui, sức khỏe và ngày càng xinh đẹp hơn nhớ. Chúng ta mặc dù cũng chưa trải qua nhiều chuyện với nhau, nhưng anh mong rằng chúng ta sẽ có nhiều kỷ niệm tuyệt vời hơn và sẽ được tiếp tục được chúng ta xây dựng trong thời gian tới. Anh rất cảm ơn em bé đã chọn anh, đồng hành cùng anh và quan trọng hơn hết là yêu anh. Love you so much❤️";
     let timoutTextLetterContent;
-    function textCharLetterContent(){
+    function textCharLetterContent() {
         if (indexTextContent < textLetterP.length) {
             textLetterContent.textContent += textLetterP[indexTextContent];
             indexTextContent++;
             setTimeout(indexTextContent, 100);
         }
-        else{
+        else {
             clearInterval(timoutTextLetterContent)
 
         }
     }
-    function funcTimeoutLetterContent(){
+    function funcTimeoutLetterContent() {
         indexTextContent = 0; // Reset indexTextContent
         textLetterContent.textContent = ''; // Xóa nội dung hiện tại của textLetter
         clearInterval(timoutTextLetterContent);
-        timoutTextLetterContent =  setInterval(()=>{
+        timoutTextLetterContent = setInterval(() => {
             textCharLetterContent();
-            }, 100)
+        }, 100)
     }
     //end 
-    document.querySelector(".boxSlider .right").addEventListener("click", function(){
+    document.querySelector(".boxSlider .right").addEventListener("click", function () {
         var slider = document.querySelectorAll(".slider")
         document.querySelector(".listSlider").appendChild(slider[0])
     })
-    document.querySelector(".boxSlider .left").addEventListener("click", function(){
+    document.querySelector(".boxSlider .left").addEventListener("click", function () {
         var slider = document.querySelectorAll(".slider")
-        document.querySelector(".listSlider").prepend(slider[slider.length -1])
+        document.querySelector(".listSlider").prepend(slider[slider.length - 1])
     })
 
-    document.querySelector(".buttonLove").addEventListener("click", function(){
-        let timeout = setInterval(()=>{
+    document.querySelector(".buttonLove").addEventListener("click", function () {
+        let timeout = setInterval(() => {
             var letters = document.createElement("div");
             letters.className = "letters"
             letters.innerHTML = '<img src="../image/letters.png" alt="">';
@@ -285,28 +289,29 @@
             letters.style.left = left + "%";
             letters.style.top = "-10%";
             letters.style.transform = `rotate(${rotate}deg)`;
-            setTimeout(()=>{
+            setTimeout(() => {
                 letters.style.top = "100%";
-            },1000)
-            setTimeout(()=>{
+            }, 1000)
+            setTimeout(() => {
                 letters.remove()
-            },11000)
-            document.querySelectorAll(".letters").forEach((item)=>{
-                item.addEventListener("click", function(){
+            }, 11000)
+            document.querySelectorAll(".letters").forEach((item) => {
+                item.addEventListener("click", function () {
                     clearInterval(timeout)
                     $(".wrapperLetterForm").fadeIn()
                     funcTimeoutLetter();
-                    
+
                 })
             })
-        },500)
+        }, 500)
     })
 
-    document.querySelector(".fa-xmark").addEventListener("click", function(){
+    document.querySelector(".fa-xmark").addEventListener("click", function () {
         indexTextContent = 0; // Reset indexTextContent
         textLetterContent.textContent = ''; // Xóa nội dung hiện tại của textLetter
         clearInterval(timoutTextLetterContent)
         $(".wrapperLetterForm").fadeOut()
     })
 </script>
+
 </html>
